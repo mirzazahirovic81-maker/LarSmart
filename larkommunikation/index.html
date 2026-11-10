@@ -1,49 +1,448 @@
-<!doctype html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LärKommunikation | LärSmart</title><style>
-:root{--bg:#091321;--panel:#142438;--line:#30475c;--pink:#e8b5ce;--text:#eaf2fa;--muted:#b5c5d5}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}button{font:inherit;cursor:pointer}a{color:inherit}.shell{max-width:1140px;margin:auto;padding:27px 24px 76px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:39px}.brand-logo{width:39px;height:39px;object-fit:contain}.brand{display:inline-flex;align-items:center;gap:10px;font-size:22px;font-weight:800;letter-spacing:-.04em;color:#80dfd5;text-decoration:none}.back{border:1px solid var(--line);padding:9px 15px;border-radius:12px;text-decoration:none;color:var(--muted);font-size:14px}.eyebrow{color:var(--pink);font-size:12px;font-weight:800;letter-spacing:.13em}.hero{max-width:820px;margin-bottom:27px}h1{font-size:clamp(38px,5vw,64px);line-height:1.1;letter-spacing:-.055em;margin:12px 0}h1 span{color:var(--pink)}.intro{color:var(--muted);font-size:17px;margin:0}.principle{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 30px}.principle span{border:1px solid #455568;border-radius:30px;padding:6px 12px;color:#dce6ef;font-size:12px}.track{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:26px 0}.step{border:1px solid var(--line);background:#122033;color:var(--muted);padding:13px 11px;border-radius:12px;text-align:left;font-size:13px;line-height:1.4}.step b{display:block;font-size:12px;margin-bottom:5px;color:var(--pink)}.step.active{border-color:var(--pink);background:#302638;color:#fff}.panel{background:linear-gradient(135deg,#17293d,#101c2d);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,3vw,32px)}.count{font-size:12px;color:var(--pink);font-weight:800;letter-spacing:.1em}.panel h2{font-size:clamp(25px,3vw,34px);margin:6px 0 8px;letter-spacing:-.035em}.lead{color:var(--muted);margin:0 0 20px;max-width:850px}.scene{display:grid;grid-template-columns:1fr 1.15fr;gap:22px;align-items:stretch;margin-bottom:22px}.scene img{display:block;width:100%;height:auto;max-height:none;min-height:0;aspect-ratio:20/9;object-fit:cover;object-position:center center;align-self:center;border-radius:14px;background:#0d1b2b}.case{background:#0d1b2b;border:1px solid #31445b;border-radius:14px;padding:23px;display:flex;flex-direction:column;justify-content:center}.case-label{font-size:11px;color:#e8b5ce;font-weight:800;letter-spacing:.11em;margin-bottom:10px}.case p{margin:0;font-size:17px;line-height:1.65}.question{font-size:19px;font-weight:750;margin:0 0 14px}.choices{display:grid;gap:10px}.choice{background:#1b2d41;border:1px solid #385168;border-radius:12px;text-align:left;color:#eaf2fa;padding:16px 18px;transition:.15s}.choice:hover,.choice:focus-visible{border-color:var(--pink)}.choice.chosen{border-color:var(--pink);background:#3b2b42}.choice strong{display:block;font-size:15px;margin-bottom:3px}.choice small{display:block;color:#b5c5d5;font-size:13px}.feedback{margin-top:20px;border:1px solid #76586f;background:#292638;padding:22px;border-radius:14px}.feedback h3{color:#f5c8dc;font-size:17px;margin:0 0 8px}.feedback p{margin:8px 0;color:#dce5ef}.feedback .key{border-top:1px solid #56465a;padding-top:12px;margin-top:15px}.prompt{background:#10283a;border-left:3px solid #80dfd5;border-radius:0 10px 10px 0;padding:13px 16px;margin-top:18px;color:#d8e9ed}.bottom{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:26px}.nav{background:var(--pink);border:0;border-radius:12px;padding:12px 20px;color:#192031;font-weight:750}.nav:disabled{opacity:.35;cursor:default}.nav.alt{background:transparent;border:1px solid var(--line);color:var(--text)}.note{font-size:12px;color:#a5b8c9;margin-top:19px}.footer{color:#8fa6b9;font-size:13px;margin-top:26px}@media(max-width:720px){.shell{padding:20px 15px 55px}.track{display:flex;overflow-x:auto;padding-bottom:7px}.step{min-width:170px}.top{margin-bottom:28px}.scene{grid-template-columns:1fr}.scene img{min-height:0;height:205px}.case p{font-size:16px}.bottom{flex-wrap:wrap}}
-</style><style id="ls-communication-unified">
-/* Match the established LärSmart area identity without altering scenario logic. */
-:root{--bg:#091321;--panel:#1b2d40;--line:#345269;--pink:#e8b5ce;--text:#eaf4fc;--muted:#b1c5d2}
-body{background:var(--bg);font-size:16px;line-height:1.55}
-.shell{max-width:1120px;padding:25px 22px 80px}
-.top{margin-bottom:46px;align-items:center}
-.ls-original-logo{display:inline-flex;align-items:center;max-width:195px;text-decoration:none}
-.ls-original-logo img{display:block;width:172px;max-width:100%;height:auto}
-.back{color:#d4e7ed;background:transparent;border:1px solid #496171;border-radius:12px;padding:11px 16px;font-size:14px}
-.eyebrow{font-size:12px;letter-spacing:2px;font-weight:800}
-.hero{max-width:none;margin-bottom:0}
-.hero h1{font-size:clamp(38px,5vw,60px);letter-spacing:-2px;line-height:1.08;margin:12px 0 20px;overflow-wrap:anywhere}
-.hero h1 .ls-heading-learn{color:#eaf4fc;font-weight:650}
-.hero h1 .ls-heading-rest{color:#eaf4fc;font-weight:300}
-.ls-topic-tagline{font-size:clamp(24px,3.3vw,35px);line-height:1.2;letter-spacing:-.7px;color:var(--pink);font-weight:650;margin:0 0 24px}
-.intro{max-width:760px;color:#b1c5d2;font-size:16px;line-height:1.65}
-.principle{margin:18px 0 28px}
-.principle span{border-color:#40586b;color:#cbdde5;font-size:13px;padding:7px 14px}
-.ls-flow-label{font-size:12px;letter-spacing:.12em;font-weight:750;color:#b6cbd7;margin:27px 0 10px}
-.track{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 29px}
-.step{flex:0 1 auto;min-width:155px;max-width:235px;border:1px solid #40586b;border-radius:16px;background:#1b3043;color:#cbdde5;padding:12px 15px;text-align:left;font-size:13px}
-.step b{color:var(--pink)}
-.step.active{border-color:var(--pink);background:#392a3d;color:#fff}
-.panel{background:#1b2d40;border:1px solid #345269;border-radius:18px;padding:clamp(18px,3vw,28px)}
-.scene{min-width:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.scene img{width:100%;height:100%;min-height:240px;max-height:330px;aspect-ratio:auto;object-fit:cover;object-position:center;border-radius:13px}
-.case{min-width:0}
-.panel h2{overflow-wrap:anywhere}
-@media(max-width:720px){.shell{padding:18px 15px 55px}.top{margin-bottom:28px}.ls-original-logo img{width:150px}.track{display:flex;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px}.step{flex:0 0 180px}.scene{grid-template-columns:1fr}.scene img{height:220px;min-height:0;max-height:none}.ls-topic-tagline{font-size:26px}}
-</style></head><body><main class="shell"><header class="top"><a class="ls-original-logo" href="../index.html" aria-label="LärSmart startsida"><img src="../larsmart-logo-dark.png" alt="LärSmart"></a><a class="back" href="../index.html#library">← Till startsidan</a></header><div class="hero"><div class="eyebrow">LÄRKOMMUNIKATION / INTERAKTIV UPPLEVELSE</div><h1><span class="ls-heading-learn">Lär</span><span class="ls-heading-rest">Kommunikation</span></h1><h2 class="ls-topic-tagline">Förstå vad som händer mellan människor.</h2><p class="intro">Det svåra i kommunikation är sällan att hitta rätt ord. Det är att förstå vad som står på spel, vad vi antar och hur vårt sätt att kommunicera påverkar andra. Pröva verklighetsnära situationer där flera handlingssätt kan vara rimliga.</p><div class="principle"><span>Skilj fakta från tolkning</span><span>Se målkonflikter</span><span>Pröva konsekvenser</span></div></div><div class="ls-flow-label">VÄLJ DEL · KLICKBARA FALL</div><nav class="track" id="track" aria-label="Välj fall"></nav><section class="panel" aria-live="polite"><div class="count" id="count"></div><h2 id="heading"></h2><p class="lead" id="lead"></p><div class="scene"><img id="sceneImage" alt="Illustration av kommunikationssituationen"><div class="case"><div class="case-label" id="caseLabel"></div><p id="caseText"></p></div></div><p class="question" id="question"></p><div class="choices" id="choices"></div><div class="feedback" id="feedback" hidden></div><div class="bottom"><button class="nav alt" id="prev">← Föregående fall</button><button class="nav" id="next">Nästa fall →</button></div><p class="note">Bilderna är AI-genererade illustrationer. Fallen är fiktiva men bygger på återkommande kommunikationsdilemman. Konsekvenserna är resonemang, inte förutsägelser om människors reaktioner.</p></section><p class="footer">LärSmart · Förstå helheten. Prova själv.</p></main><script>
-const cases=[
-{title:'När alla säger ja men menar olika saker',lead:'En grupp kan fatta ett gemensamt beslut utan att ha samma bild av vad beslutet innebär. Det är särskilt riskabelt när människor har olika ansvar och information.',label:'FALL 01 · PROJEKTGRUPP',text:'Efter ett möte säger alla ja till att lansera nästa månad. Ekonomiansvarig tror att omfattningen ska minskas. Utvecklaren tror att fler resurser tillkommer. Beställaren tror att allt ursprungligt innehåll ingår. Du leder mötet och märker att ingen vill öppna diskussionen igen.',question:'Vad gör du innan beslutet dokumenteras?',image:1,options:[{name:'Be var och en formulera vad beslutet innebär för deras del',detail:'Synliggör olika tolkningar innan ni låser planen.',effect:'Du riskerar att förlänga mötet och blotta osäkerhet, men får fram antaganden som annars skulle ha blivit dyra överraskningar. Frågan behöver följas av ett gemensamt dokumenterat beslut.'},{name:'Sammanfatta beslutet själv och fråga om någon invänder',detail:'Ger en tydlig formulering och möjlighet att reagera.',effect:'Effektivt när gruppen redan är överens. Men tystnad kan bero på tidspress, status eller ovilja att verka besvärlig. Du kan missa den oenighet som ännu inte formulerats.'},{name:'Låta varje funktion lösa detaljerna efter mötet',detail:'Ger handlingsutrymme och sparar tid nu.',effect:'Det kan fungera om gränssnitten är tydliga. Här är själva innebörden av beslutet oklar, vilket flyttar konflikten till genomförandet.'}],insight:'Ett gemensamt ja är inte samma sak som gemensam förståelse. Ett bra beslutsmöte prövar vad människor faktiskt har uppfattat.',reflect:'Vilken fråga skulle synliggöra de olika tolkningarna utan att någon behöver känna sig utpekad?'},
-{title:'När saklig kritik blir ett hot',lead:'Korrekt återkoppling kan ändå få dålig effekt om den hotar mottagarens självbild eller ställning. Samtidigt får hänsyn inte göra budskapet otydligt.',label:'FALL 02 · ÅTERKOPPLING',text:'En erfaren kollega presenterar en analys med ett väsentligt metodfel. Du upptäcker felet under ett möte med chefer. Beslut ska fattas samma dag. Kollegan är stolt över arbetet och har hög trovärdighet i gruppen.',question:'Hur agerar du när både beslutskvalitet och relation står på spel?',image:2,options:[{name:'Beskriv felets konsekvens sakligt i mötet och föreslå kontroll före beslut',detail:'Skyddar beslutsunderlaget utan att värdera personen.',effect:'Du gör risken synlig i tid. Kollegan kan ändå känna sig ifrågasatt offentligt. Formuleringen bör därför fokusera på antagandet, inte kompetensen, och följas upp enskilt.'},{name:'Ta upp felet enskilt efter mötet',detail:'Skyddar relationen och ger kollegan utrymme.',effect:'Kan vara klokt när beslutet kan vänta. Här riskerar gruppen att fatta ett felaktigt beslut innan korrigeringen når fram.'},{name:'Ställa en försiktig fråga som antyder att siffrorna kan vara osäkra',detail:'Låg konfrontation, men mindre tydlighet.',effect:'Kan öppna för omprövning, men också missförstås som en detaljfråga. Om felet är avgörande krävs en tydligare markering.'}],insight:'Psykologisk trygghet innebär inte att undvika obekväma fakta. Den gör det möjligt att pröva dem utan att göra personer till problemet.',reflect:'Hur skulle du formulera en invändning som är tillräckligt tydlig för att stoppa ett felaktigt beslut?'},
-{title:'När lyssnande blir ett sätt att skjuta upp beslut',lead:'Aktivt lyssnande är värdefullt, men kan också användas som en ritual där människor får tala utan att deras perspektiv påverkar något.',label:'FALL 03 · FÖRÄNDRING',text:'En chef inför ett nytt arbetssätt. Medarbetarna har fått berätta om sina farhågor vid flera möten, men inga invändningar har påverkat planen. Nu säger chefen: ”Jag har verkligen lyssnat på er.” Förtroendet sjunker trots att mötena har varit respektfulla.',question:'Vilken åtgärd skulle mest sannolikt återupprätta en meningsfull dialog?',image:3,options:[{name:'Visa vilka synpunkter som påverkat beslutet och motivera vilka som inte gjort det',detail:'Gör återkopplingen spårbar och skiljer inflytande från vetorätt.',effect:'Skapar tydlighet även när alla inte får sin vilja igenom. Förutsätter att chefen är beredd att erkänna var dialogen haft begränsat inflytande.'},{name:'Ordna fler samtal med öppna frågor',detail:'Ger mer tid för att bli hörd.',effect:'Kan hjälpa om perspektiv fortfarande saknas. Om beslutet redan är låst riskerar ännu en dialog att förstärka upplevelsen av skeninflytande.'},{name:'Förklara tydligare varför förändringen är nödvändig',detail:'Ger sammanhang och kan minska osäkerhet.',effect:'Kan öka förståelsen för beslutet, men besvarar inte frågan om hur medarbetarnas kunskap har tagits till vara.'}],insight:'Att bli hörd och att få inflytande är olika saker. Trovärdig kommunikation är tydlig med vilket utrymme som faktiskt finns att påverka.',reflect:'Hur kan man bjuda in till dialog utan att lova mer inflytande än man kan ge?'},
-{title:'När ett tydligt meddelande får fel effekt',lead:'Samma formulering kan fungera olika beroende på kanal, relation och tidpunkt. Avsändarens avsikt säger inte hela sanningen om budskapets effekt.',label:'FALL 04 · DIGITAL KOMMUNIKATION',text:'En projektledare skriver i gruppchatten klockan 21.40: ”Vi behöver prata om leveransen i morgon. Det här håller inte.” Syftet är att markera att kvaliteten måste förbättras. Några tolkar meddelandet som att deras anställning eller uppdrag är hotat.',question:'Vad är den mest träffsäkra lärdomen av situationen?',image:4,options:[{name:'Tydlighet kräver även sammanhang, kanalval och en begriplig nästa handling',detail:'Innehållet måste kunna tolkas på avsett sätt.',effect:'Meddelandet saknar specificerat problem, syfte och nästa steg. Tidpunkten och gruppkanalen förstärker osäkerheten. Ett konkret mötesunderlag i rätt kanal skulle minska tolkningsutrymmet.'},{name:'Mottagarna behöver bli mindre känsliga för rak kommunikation',detail:'Lägger ansvaret främst på dem som läser.',effect:'Mottagare har ansvar för sina tolkningar, men avsändaren kan inte bortse från förutsebara effekter av ett otydligt och laddat meddelande.'},{name:'Viktiga budskap ska alltid ges muntligt',detail:'Minskar risken för vissa missförstånd.',effect:'Muntlig kommunikation kan ge snabb återkoppling, men är ingen universallösning. Skrift kan vara bättre för dokumentation och komplexa beslut. Valet beror på syftet.'}],insight:'Kommunikation är en designfråga: vilket innehåll, i vilken kanal, vid vilken tidpunkt, med vilket utrymme för återkoppling?',reflect:'Hur skulle du skriva om meddelandet för att behålla allvaret utan att skapa onödig osäkerhet?'},
-{title:'När en bra fråga styr svaret',lead:'Frågor kan framstå som öppna samtidigt som de begränsar vilka svar som känns möjliga. Det påverkar beslut även i grupper med hög kompetens.',label:'FALL 05 · BESLUT OCH PÅVERKAN',text:'En ansvarig presenterar ett förslag och frågar: ”Är det någon som ser något verkligt hinder mot att vi går vidare?” Alla är tysta. Efteråt visar det sig att flera hade allvarliga invändningar men uppfattade att de behövde bevisa att förslaget var omöjligt för att få säga emot.',question:'Hur kan frågan ändras för att bättre pröva beslutets kvalitet?',image:5,options:[{name:'”Vilka antaganden behöver hålla för att detta ska fungera, och vad skulle kunna kullkasta dem?”',detail:'Gör kritisk granskning till en del av uppgiften.',effect:'Frågan flyttar fokus från att vara för eller emot till att pröva förutsättningar. Fler kan bidra utan att behöva ta rollen som motståndare.'},{name:'”Är alla överens om att vi ska gå vidare?”',detail:'Ger ett tydligt ja-eller-nej-besked.',effect:'Kan bekräfta formell enighet, men gör det svårt att uttrycka osäkerhet eller delvis stöd. Ett ja säger lite om kvaliteten i underlaget.'},{name:'”Har någon synpunkter innan vi bestämmer oss?”',detail:'Öppnar för kommentarer.',effect:'Bättre än att fråga efter absoluta hinder, men fortfarande ospecifikt. I en grupp med status- eller tidspress kan tystnad lätt tolkas som samtycke.'}],insight:'Frågor är inte neutrala behållare för information. De sätter ramen för vilka tankar som blir möjliga och socialt tillåtna.',reflect:'Vilken fråga skulle du ställa om du verkligen ville upptäcka att ditt eget förslag är fel?'},
-{title:'När två rimliga intressen krockar',lead:'En konflikt kan bestå av två legitima behov snarare än en part som har rätt och en som har fel. Om man argumenterar om positioner missar man ofta handlingsutrymmet.',label:'FALL 06 · INTRESSEKONFLIKT',text:'En verksamhetsansvarig vill hålla en lokal öppen längre för besökarna. Driftansvarig invänder att bemanning och ventilation inte är dimensionerade för det. Båda känner att den andra prioriterar fel. Du ska leda ett gemensamt samtal.',question:'Hur öppnar du för en lösning som inte bygger på att någon ger upp sitt uppdrag?',image:6,options:[{name:'Synliggör båda uppdragen och undersök vilka behov som måste uppfyllas',detail:'Separera behov från den lösning var och en redan föreslagit.',effect:'Det kan öppna för andra öppettider, zonindelning eller särskilda insatser. Men verkliga resursgränser måste fortfarande hanteras och beslutas av rätt ansvarig.'},{name:'Be parterna kompromissa genom att mötas halvvägs',detail:'Ger ett snabbt och till synes rättvist förslag.',effect:'En kompromiss kan fungera, men halva öppettiden och halva bemanningen kan vara en dålig lösning för båda. Den prövar inte vad som faktiskt behövs.'},{name:'Låt den med störst budgetansvar avgöra',detail:'Ger tydligt mandat och snabbhet.',effect:'Beslut kan behöva eskaleras, men att avgöra utan att förstå verksamhetskraven kan ge en formellt korrekt men svårgenomförd lösning.'}],insight:'Bakom motstridiga ståndpunkter finns ofta behov som kan förenas på fler sätt än de första förslagen antyder.',reflect:'Vilken fråga skulle få båda att beskriva sina verkliga begränsningar i stället för att försvara sina positioner?'},
-{title:'När olikheter misstolkas som motstånd',lead:'Kommunikationsstil, erfarenhet och maktposition påverkar vilka bidrag som syns. Tystnad är inte nödvändigtvis ointresse och snabbhet är inte alltid förståelse.',label:'FALL 07 · OLIKA PERSPEKTIV',text:'I en arbetsgrupp dominerar två erfarna personer diskussionerna. En ny kollega med relevant sakkunskap säger lite under mötena men skickar genomarbetade invändningar efteråt. Gruppen börjar beskriva personen som passiv och svår att samarbeta med.',question:'Vad skulle ge gruppen ett mer rättvisande beslutsunderlag?',image:7,options:[{name:'Variera formerna för deltagande och låt alla förbereda sina perspektiv',detail:'Kombinera skriftlig reflektion med gemensam diskussion.',effect:'Fler perspektiv kan bli synliga, särskilt om gruppen också prövar invändningarna sakligt. Det är dock viktigt att inte anta att alla tysta personer har samma behov.'},{name:'Be den nya kollegan att ta mer plats på mötena',detail:'Gör förväntningen tydlig.',effect:'Kan vara relevant som del av en dialog, men lämnar gruppens samtalsmönster oförändrat och kan förväxla synlighet med kvalitet.'},{name:'Låt de mest erfarna sammanfatta och besluta',detail:'Tar vara på erfarenhet och sparar tid.',effect:'Erfarenhet är värdefull, men om alternativa perspektiv inte prövas riskerar gruppen att reproducera sina egna antaganden.'}],insight:'Likvärdigt deltagande behöver inte innebära att alla uttrycker sig på samma sätt. Det avgörande är om relevanta perspektiv faktiskt påverkar prövningen.',reflect:'Hur kan du upptäcka kompetens som inte hörs i det vanliga mötesformatet?'},
-{title:'När en förändring skapar oro trots goda avsikter',lead:'Information om vad som ska hända räcker sällan när människor är osäkra på varför, vad som går att påverka och hur risker hanteras.',label:'FALL 08 · FÖRÄNDRINGSKOMMUNIKATION',text:'En ny rutin ska införas för att minska fel. Ledningen säger att förändringen blir enkel och positiv. Medarbetarna ser däremot extra arbete och risker för verksamheten. När de invänder svarar projektgruppen med fler presentationsbilder om fördelarna.',question:'Hur skapar du en mer trovärdig kommunikation om förändringen?',image:8,options:[{name:'Redovisa både syfte, osäkerheter och hur invändningar ska prövas',detail:'Gör det möjligt att skilja fast beslut från sådant som kan justeras.',effect:'Ger en mer realistisk gemensam bild. Förtroendet stärks först om uppföljningen är verklig och eventuella justeringar blir synliga.'},{name:'Betona vinsterna tydligare och använd positiva exempel',detail:'Försöker öka motivationen.',effect:'Konkreta vinster kan hjälpa, men om riskerna lämnas obesvarade kan den positiva tonen uppfattas som att erfarenheterna från verksamheten avfärdas.'},{name:'Vänta med kommunikationen tills alla detaljer är färdiga',detail:'Minskar risken att behöva ändra information.',effect:'Kan ge mer exakta besked senare, men lämnar utrymme för rykten och gör det svårare att fånga verksamhetens kunskap i tid.'}],insight:'Trovärdig förändringskommunikation visar vad som är bestämt, vad som är osäkert och hur ny information kan påverka genomförandet.',reflect:'Vilken osäkerhet skulle du behöva vara öppen med för att vinna förtroende i just den här situationen?'}
-];
-const embeddedImages={"1":"bilder/scenario-final-01.jpg","2":"bilder/scenario-final-02.jpg","3":"bilder/scenario-final-03.jpg","4":"bilder/scenario-final-04.jpg","5":"bilder/scenario-final-05.jpg","6":"bilder/scenario-final-06.jpg","7":"bilder/scenario-final-07.jpg","8":"bilder/scenario-final-08.jpg"};const sceneAlts={1: "Projektgrupp diskuterar olika uppfattningar vid en whiteboard", 2: "Två kollegor granskar en rapport och diskuterar en invändning", 3: "En medarbetare lyssnar koncentrerat under ett samtal", 4: "En medarbetare funderar över ett oroande budskap", 5: "En mötesledare ställer en fråga till en kollega", 6: "Två ansvariga diskuterar motstridiga behov", 7: "Kollegor med olika perspektiv möts i ett samtal", 8: "Två kollegor samtalar om en förestående förändring"};let current=0;const selections=Array(cases.length).fill(-1);const $=id=>document.getElementById(id);function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}function render(){const c=cases[current];$('track').replaceChildren(...cases.map((x,i)=>{const b=el('button','step'+(i===current?' active':''));b.type='button';b.innerHTML='<b>0'+(i+1)+'</b>';b.append(document.createTextNode(x.title));b.addEventListener('click',()=>{current=i;render()});if(i===current)b.setAttribute('aria-current','step');return b}));$('count').textContent=`FALL ${current+1} AV ${cases.length}`;$('heading').textContent=c.title;$('lead').textContent=c.lead;$('caseLabel').textContent=c.label;$('caseText').textContent=c.text;$('question').textContent=c.question;$('sceneImage').src=embeddedImages[c.image];$('sceneImage').alt=sceneAlts[c.image];$('choices').replaceChildren(...c.options.map((o,i)=>{const b=el('button','choice'+(selections[current]===i?' chosen':''));b.type='button';b.setAttribute('aria-pressed',selections[current]===i?'true':'false');b.append(el('strong','',o.name),el('small','',o.detail));b.addEventListener('click',()=>{selections[current]=i;render()});return b}));const f=$('feedback');f.replaceChildren();if(selections[current]<0){f.hidden=true}else{f.hidden=false;f.append(el('h3','','Möjlig konsekvens'),el('p','',c.options[selections[current]].effect),el('p','key','Princip: '+c.insight),el('div','prompt','Reflektera: '+c.reflect))}$('prev').disabled=current===0;$('next').textContent=current===cases.length-1?'Börja om ↺':'Nästa fall →'}$('prev').addEventListener('click',()=>{if(current>0){current--;render()}});$('next').addEventListener('click',()=>{if(current===cases.length-1){current=0;selections.fill(-1)}else current++;render()});render();
-</script></body></html>
-
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LärKommunikation | LärSmart</title>
 <style>
-/* Enhetligt bildutsnitt i samtliga kommunikationsfall. */
-.scene #sceneImage {display:block;width:100%;height:auto;aspect-ratio:20/9;object-fit:cover;object-position:center center;background:#0d1b2b;border-radius:14px;}
+
+:root{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:#edf7fa;background:#101d2d;--accent:#9ed9b8;--muted:#b5c9d4}*{box-sizing:border-box}body{margin:0;line-height:1.55}button,input{font:inherit}button{cursor:pointer}.layout{max-width:1000px;margin:auto;padding:24px 22px 70px}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:36px}.brand{font-size:23px;font-weight:800;letter-spacing:-.7px;color:white}.brand span{color:#58d5c8}.back{color:#d4e7ed;text-decoration:none;border:1px solid #496171;border-radius:10px;padding:10px 14px;font-size:14px}.back:hover,.back:focus-visible{border-color:var(--accent);color:var(--accent)}.eyebrow{color:var(--accent);font-weight:750;font-size:12px;letter-spacing:1.6px}.intro h1{font-size:clamp(32px,5vw,55px);line-height:1.12;margin:10px 0 15px;letter-spacing:-1.4px}.intro p{color:#c4d4dc;max-width:710px;margin:0 0 25px}.stage{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:22px 0 25px}.step{border:1px solid #40586b;border-radius:999px;background:#1b3043;color:#cbdde5;padding:9px 15px;font-size:13px}.step.active{border-color:var(--accent);color:#10271f;background:var(--accent);font-weight:750}.step:disabled{opacity:.65;cursor:default}.panel{background:#1b2d40;border:1px solid #345269;border-radius:18px;padding:25px;margin:0 0 18px}.panel h2{margin:0 0 7px;font-size:23px;letter-spacing:-.5px}.muted{color:var(--muted);font-size:14px}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:18px 0}.kpi{border-radius:13px;background:#112438;border:1px solid #334d5f;padding:16px}.kpi span{display:block;color:#b4cad6;font-size:12px}.kpi strong{display:block;font-size:clamp(18px,2.5vw,27px);margin-top:4px;font-variant-numeric:tabular-nums}.kpi strong.good{color:#9fe3bf}.kpi strong.bad{color:#ffb6a9}.control{margin:18px 0}.control .line{display:flex;align-items:baseline;justify-content:space-between;gap:12px}.control label{font-weight:650}.control output{color:var(--accent);font-variant-numeric:tabular-nums;font-weight:700}input[type=range]{display:block;width:100%;accent-color:var(--accent);cursor:pointer;margin:13px 0 4px}.range-end{display:flex;justify-content:space-between;color:#92aab8;font-size:11px}.notice{padding:15px 18px;border-radius:12px;background:#102f32;border:1px solid #386d63;color:#d8f4e6;margin:18px 0}.notice.warn{background:#392b31;border-color:#8b5960;color:#ffe2d8}.notice p{margin:5px 0 0;font-size:14px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{border:1px solid #628d83;border-radius:11px;background:var(--accent);color:#102820;padding:12px 19px;font-weight:750}.btn.secondary{background:transparent;color:#dceaf0;border-color:#567184}.btn:focus-visible,.step:focus-visible,input:focus-visible{outline:3px solid #e1eab1;outline-offset:3px}.split{display:grid;grid-template-columns:1.2fr .8fr;gap:17px}.bars{display:flex;height:16px;border-radius:999px;overflow:hidden;background:#31475b;margin:18px 0 8px}.bars div{height:100%;transition:width .15s}.legend{display:grid;gap:10px;margin-top:14px}.legend-item{display:flex;gap:9px;align-items:center;justify-content:space-between;font-size:13px}.legend-item span:first-child{display:flex;gap:9px;align-items:center}.dot{width:11px;height:11px;border-radius:3px;display:inline-block;flex:none}.choice{width:100%;text-align:left;border:1px solid #405a6d;background:#14283a;color:#d9e7ef;border-radius:12px;padding:14px 15px;margin:6px 0}.choice.selected{border-color:var(--accent);background:#24433f}.choice strong{display:block;color:#f2fbff}.choice small{color:#b5c9d4}.scenario-result{margin-top:14px}.foot{margin-top:32px;color:#94adbb;font-size:12px;line-height:1.6}.hidden{display:none!important}@media(max-width:700px){.layout{padding:18px 15px 45px}.panel{padding:18px}.kpis{grid-template-columns:repeat(2,1fr)}.kpis .kpi:first-child{grid-column:1/-1}.split{grid-template-columns:1fr}.top{margin-bottom:26px}.back{font-size:12px;padding:8px}.intro h1{font-size:34px}}
+ .income-edit{display:flex;align-items:center;gap:7px;margin-top:9px}.income-edit input{min-width:0;width:100%;max-width:185px;background:#102438;border:1px solid #55748a;border-radius:9px;color:#edf7fa;font-size:clamp(19px,2.5vw,30px);font-weight:750;padding:7px 9px}.income-edit input:focus-visible{outline:2px solid #9ed9b8;outline-offset:2px}.income-edit span{color:#b5c9d4;font-size:12px;white-space:nowrap}.kpi label{color:#b5c9d4;font-size:14px} 
+
+/* LärEkonomi: sparavsnittet ska ligga under hela beräkningsytan */
+.econ-module-body > .saving-learning,
+.econ-module-body > .econ-loan-note {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+}
+.saving-learning {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  padding: 0 25px 18px;
+}
+.compound-card,
+.saving-types,
+.horizon-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+.compound-card {
+  padding: 22px 24px;
+}
+.compound-card h4,
+.saving-types h4,
+.horizon-card h4 {
+  font-size: 20px;
+  margin: 8px 0 10px;
+}
+.compound-intro {
+  max-width: 780px;
+  color: #bfd0db;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+.compound-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: 12px;
+  margin: 20px 0 14px;
+}
+.compound-step {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 15px 16px;
+  background: #1b394b;
+  border: 1px solid #3c6670;
+  border-radius: 11px;
+}
+.compound-step span {
+  color: #80dfd1;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+.compound-step strong {
+  color: #e3f5f2;
+  font-size: 14px;
+}
+.compound-step small {
+  color: #b8ced9;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.compound-flow > b {
+  align-self: center;
+  font-size: 20px;
+}
+.compound-card .saving-small-note {
+  font-size: 12px;
+  line-height: 1.55;
+  margin: 0;
+}
+.saving-types {
+  padding: 21px 24px;
+}
+.saving-type-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+.saving-type {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 15px;
+}
+.saving-type h5 {
+  font-size: 15px;
+  line-height: 1.35;
+  margin: 8px 0 7px;
+}
+.saving-type p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0 0 13px;
+  flex: 1;
+}
+.risk-label {
+  align-self: flex-start;
+  font-size: 10px;
+}
+.econ-loan-note {
+  grid-column: 1 / -1;
+  margin: 0 25px 24px;
+}
+@media (max-width: 900px) {
+  .saving-type-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .saving-learning { padding: 0 18px 18px; }
+  .compound-card, .saving-types, .horizon-card { padding: 16px; }
+  .compound-flow {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+  .compound-flow > b {
+    transform: rotate(90deg);
+    justify-self: center;
+    line-height: 1;
+  }
+  .saving-type-grid { grid-template-columns: 1fr; }
+  .econ-loan-note { margin: 0 18px 18px; }
+}
+
+
+/* Tydligare sparformer: större text och lättare att jämföra stegen. */
+.saving-types-intro {
+  max-width: 900px;
+  margin: 0;
+  color: #c5d7e1;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.saving-type-grid { align-items: stretch; }
+.saving-type {
+  padding: 18px;
+  min-height: 220px;
+}
+.saving-type h5 {
+  font-size: 17px;
+  line-height: 1.35;
+  margin: 10px 0 9px;
+}
+.saving-type p {
+  color: #c8d8e1;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  flex: 1;
+}
+.risk-label { font-size: 11px; padding: 6px 10px; }
+@media (max-width: 560px) {
+  .saving-type { min-height: 0; padding: 17px; }
+  .saving-type p { font-size: 14px; }
+}
+
+
+.ls-original-logo{display:inline-flex;align-items:center;background:transparent;border-radius:0;padding:0;max-width:195px}.ls-original-logo img{display:block;width:172px;max-width:100%;height:auto}
+.ls-heading-name{display:inline-block;white-space:nowrap}.ls-heading-learn{font-weight:650}.ls-heading-rest{font-weight:300}
+
+/* Harmonize LärEkonomi with the established LärSocialt visual language. */
+:root{background:#091321;color:#eaf4fc;--muted:#b1c5d2}
+body{background:#091321;color:#eaf4fc;font-size:16px;line-height:1.55}
+.layout{max-width:1120px;padding:25px 22px 80px}
+.top{margin-bottom:46px;align-items:center}
+.back{color:#d4e7ed;background:transparent;border-color:#496171;border-radius:12px;padding:11px 16px}
+.eyebrow{font-size:12px;letter-spacing:2px;font-weight:800}
+.intro h1{font-size:clamp(38px,5vw,60px);letter-spacing:-2px;line-height:1.08;margin:12px 0 20px}
+.intro h1>span:last-child{display:block;margin-top:10px}
+.intro p{max-width:760px;color:#b1c5d2;margin:0 0 28px}
+.stage{gap:8px;margin:26px 0 32px}
+.step{background:#152c40;border:1px solid #2b4c60;padding:8px 12px;border-radius:30px;font-size:13px;color:#d9e7ee}
+.step.active{background:var(--accent);border-color:var(--accent);color:#10271f}
+.panel{background:#142439;border-color:#32495c;border-radius:20px;padding:22px}
+.kpi{background:#112438;border-color:#334d5f}
+@media(max-width:740px){.layout{padding:18px 14px 55px}.panel{padding:17px}.top{margin-bottom:35px}.intro h1{font-size:clamp(38px,8vw,52px)}}
+
+.intro h1{margin:12px 0 20px}.intro .ls-area-subtitle{font-size:clamp(17px,1.6vw,21px);line-height:1.5;color:#b1c5d2;margin:0 0 15px;font-weight:400;max-width:760px}
+.ls-heading-description{font-weight:300;color:#eaf4fc;letter-spacing:-.035em}.ls-heading-name{white-space:nowrap}.intro h1>span:last-child{display:inline;margin-top:0}@media(max-width:740px){.ls-heading-description{font-size:.78em}}
+
+.ls-flow-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:750;margin:24px 0 9px;color:#b6cbd7}
+.ls-flow-help{font-size:14px;line-height:1.55;color:#b7cbd6;margin:8px 0 18px}
+.ls-flow-label+.stage,.ls-flow-label+.path,.ls-flow-label+.intro-meta{margin-top:0}
+.stage .step{cursor:pointer;transition:background .16s,border-color .16s,transform .16s}
+.stage .step:hover{border-color:var(--accent);transform:translateY(-1px)}
+.stage .step:focus-visible,.zone-list button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.path span,.intro-meta span{cursor:default;opacity:.88;border-style:dashed}
+.zone-list button{transition:background .16s,border-color .16s;min-height:40px}
+.zone-list button:hover{border-color:#d0bdf0;background:#32475c}
+@media(max-width:600px){.ls-flow-label{margin-top:18px}.ls-flow-help{font-size:13px}}
+
+.ls-topic-tagline{color:#9ed9b8;font-size:clamp(22px,2.5vw,34px);font-weight:500;letter-spacing:-.025em;line-height:1.25;margin:0 0 20px;max-width:100%;}.intro h1,header h1{overflow-wrap:normal;}@media(max-width:600px){.ls-topic-tagline{font-size:clamp(20px,5.5vw,27px)}}
+.scenario-context{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 26px}.scenario-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:26px}.scenario-grid h3{font-size:20px;margin:12px 0 10px}.scenario-field{margin:12px 0 20px}.scenario-field label{display:block;color:#c5d6e0;margin-bottom:7px;font-weight:600}.scenario-input{display:flex;align-items:center;gap:10px;background:#0d2032;border:1px solid #3a5668;border-radius:12px;padding:8px 13px;max-width:360px}.scenario-input input{min-width:0;width:100%;background:transparent;border:0;color:#f0f8fc;font:inherit;font-size:20px;outline:none}.scenario-input:focus-within{outline:2px solid #9ed9b8}.scenario-input span{white-space:nowrap;color:#b7cbd6}.scenario-choices{display:grid;gap:10px}.scenario-choices .choice{width:100%;text-align:left}.scenario-outcome{background:#102438;border:1px solid #345164;border-radius:18px;padding:20px;align-self:start}.scenario-verdict{background:#173c38;border:1px solid #4a947b;border-radius:12px;padding:16px;margin:12px 0}.scenario-verdict strong{display:block;color:#b4edce;font-size:19px;line-height:1.35}.scenario-verdict p{margin:9px 0 0;color:#e0ebe9;line-height:1.6}.scenario-metrics{display:grid;gap:0;margin:12px 0}.scenario-metrics>div{display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid #314b5d;padding:11px 0}.scenario-metrics span{color:#b7cbd6}.scenario-metrics strong{white-space:nowrap;font-size:18px}.scenario-insight{border-top:1px solid #385365;margin-top:18px;padding-top:15px}.scenario-insight strong{color:#a9e0c3}.scenario-insight p{color:#d1e0e8;margin:7px 0 0}.scenario-caveat{color:#a9bdc9;font-size:13px;line-height:1.6;margin-top:20px}@media(max-width:800px){.scenario-grid{grid-template-columns:1fr}.scenario-context{grid-template-columns:1fr}.scenario-outcome{padding:16px}}@media(min-width:801px) and (max-width:1050px){.scenario-context{grid-template-columns:repeat(3,1fr)}.scenario-grid{gap:14px}}.scenario-breakdown{margin:14px 0 18px}.scenario-breakdown-title{font-size:13px;font-weight:700;color:#b9d3df;margin-bottom:10px}.scenario-breakdown-row{display:flex;justify-content:space-between;gap:12px;margin:9px 0 4px;font-size:14px}.scenario-breakdown-row strong{font-variant-numeric:tabular-nums}.scenario-track{height:12px;border-radius:999px;background:#334a5d;overflow:hidden;display:flex}.scenario-track>span{display:block;height:100%}.scenario-breakdown-note{color:#b8cad5;font-size:13px;line-height:1.5;margin:11px 0 0}.scenario-equation{background:#112d33;border:1px solid #376c62;padding:13px 15px;border-radius:11px;margin-top:14px;font-size:14px;line-height:1.6}.scenario-equation strong{color:#a9e6c9}.scenario-metrics>div:last-child{border-bottom:0}@media(max-width:500px){.scenario-breakdown-row{font-size:12px;flex-wrap:wrap}.scenario-equation{font-size:13px}}
+
+
+.practice{margin:48px 0 30px;scroll-margin-top:20px}.practice-head{margin-bottom:18px}.practice-head h2{font-size:clamp(25px,4vw,35px);letter-spacing:-.7px;margin:5px 0}.practice-head p{color:#b5c9d4;max-width:670px}.practice-card{border:1px solid #47687a;border-radius:23px;background:linear-gradient(155deg,#1b3346,#122637);padding:clamp(19px,4vw,32px);box-shadow:0 14px 35px #07121c44}.practice-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#9ed9b8;font-size:13px;font-weight:750}.practice-progress{height:7px;border-radius:20px;background:#3a5363;margin:18px 0 24px;overflow:hidden}.practice-progress>div{height:100%;width:12.5%;background:#76d4b5;transition:width .25s}.practice-card h3{font-size:clamp(22px,3vw,28px);margin:0 0 12px}.practice-question{font-size:clamp(17px,2.5vw,20px);line-height:1.55;color:#f1f8fb}.practice-note{color:#bdd0d8;font-size:14px}.practice-answer{margin:20px 0 12px}.practice-answer label{display:block;color:#c6dce2;font-weight:700;margin-bottom:8px}.practice-answer input{width:100%;max-width:440px;background:#0d2030;border:1px solid #587487;border-radius:12px;padding:14px;color:white;font-size:18px}.practice-answer input:focus{outline:2px solid #9ed9b8;outline-offset:2px}.practice-choices{display:grid;gap:9px;margin:20px 0}.practice-choice{text-align:left;background:#132a3c;border:1px solid #527084;color:#eaf6fa;padding:13px 15px;border-radius:12px}.practice-choice[aria-pressed=true]{border-color:#a1e3c3;background:#255044}.practice-choice:disabled{opacity:.8}.practice-controls{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-top:18px}.practice-btn{border:1px solid #83cdae;border-radius:11px;padding:11px 17px;background:#9ed9b8;color:#10271f;font-weight:750}.practice-btn.alt{background:transparent;color:#c8e7da}.practice-btn:disabled{opacity:.4;cursor:not-allowed}.practice-feedback{border:1px solid #547888;background:#19374a;border-radius:13px;padding:15px;margin-top:18px}.practice-feedback strong{display:block;color:#a4e4c3;margin-bottom:5px}.practice-feedback p{margin:5px 0;color:#d4e6e9}.practice-footer{display:flex;justify-content:space-between;gap:10px;margin-top:24px;padding-top:16px;border-top:1px solid #496474;color:#c3d6df;font-size:14px}.practice-summary{text-align:center;padding:18px 0}.practice-summary strong{display:block;font-size:36px;color:#a4e4c3}
+@media(max-width:500px){.practice-controls .practice-btn{flex:1}.practice-card{padding:19px}.practice-footer{font-size:13px}}
+
+
+.econ-intro{margin:24px 0 42px;padding:clamp(24px,4vw,44px);border:1px solid #3c6872;border-radius:24px;background:radial-gradient(ellipse at 100% 0%,#20506277,transparent 65%),linear-gradient(135deg,#172e40,#102031);box-shadow:0 18px 50px #0002}.econ-intro-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.econ-overline,.econ-time,.econ-section-label{font-size:11px;letter-spacing:.14em;font-weight:750;color:#8ce7d7}.econ-time{color:#9cbac9}.econ-intro h1{margin:17px 0 18px;font-size:clamp(39px,5vw,68px);line-height:1.05}.econ-intro-bottom{display:flex;gap:19px;align-items:stretch;max-width:740px}.econ-intro-rule{width:3px;border-radius:4px;background:#7ae4d1;flex-shrink:0}.econ-intro-bottom p{margin:0;color:#d0e4ed;font-size:clamp(15px,1.5vw,18px);line-height:1.65}.econ-section-heading{display:flex;align-items:center;gap:16px;margin:0 0 20px}.econ-section-icon{width:51px;height:51px;border-radius:15px;background:#1b494c;color:#90f0d9;display:grid;place-items:center;font-size:28px;border:1px solid #427f79}.econ-section-heading h2{font-size:clamp(29px,3vw,40px);margin:2px 0 0;line-height:1.1}.econ-section-count{margin-left:auto;color:#a1b8c8;font-size:11px;letter-spacing:.12em;white-space:nowrap}.econ-modules{display:grid;gap:17px}.econ-module{border:1px solid #344f62;border-radius:20px;background:#122437;overflow:hidden}.econ-module-heading{display:flex;align-items:center;gap:17px;padding:22px 25px;border-bottom:1px solid #30485b}.econ-module-num{font-size:24px;color:#7ce1d2;font-weight:750}.econ-module-heading h3{font-size:clamp(20px,2.3vw,26px);margin:0 0 4px}.econ-module-heading p{font-size:13px;color:#a8bfcd;margin:0}.econ-module-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,36px);padding:23px 25px 25px}.econ-controls{display:flex;flex-direction:column;gap:7px}.econ-controls label{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#d3e4eb;margin-top:5px}.econ-controls output{color:#8ce7d7;font-weight:750;white-space:nowrap}.econ-controls input[type=range]{width:100%;accent-color:#7ce1d2;margin:3px 0 12px;cursor:pointer}.econ-visual{border:1px solid #365465;background:#0d1e2e;border-radius:15px;padding:20px;min-width:0}.econ-result-label{font-size:10px;letter-spacing:.14em;color:#a7c1cc;font-weight:750}.econ-big-result{display:block;font-size:clamp(27px,3.4vw,42px);letter-spacing:-.04em;color:#effcf9;margin:8px 0 18px}.econ-big-result.negative{color:#ffb6ac}.econ-bar{display:flex;height:17px;background:#263849;border-radius:6px;overflow:hidden}.econ-bar span{display:block;height:100%;transition:width .2s}.econ-bar span:nth-child(1),.econ-key-fixed{background:#608fca}.econ-bar span:nth-child(2),.econ-key-variable{background:#55b7a8}.econ-bar span:nth-child(3),.econ-key-left{background:#e0be72}.econ-legend{display:flex;gap:12px;flex-wrap:wrap;margin:11px 0}.econ-legend span{display:flex;align-items:center;gap:5px;font-size:11px;color:#b7cbd6}.econ-legend i{display:inline-block;width:9px;height:9px;border-radius:2px}.econ-insight{font-size:13px;line-height:1.55;color:#c1d7e1;margin:16px 0 0}.econ-event{display:flex;flex-direction:column;gap:3px;background:#203345;border:1px solid #4b6574;border-radius:11px;padding:13px;margin-top:2px}.econ-event span{font-size:10px;letter-spacing:.1em;color:#a7bdc9}.econ-event strong{font-size:21px}.econ-event small{color:#a7bdc9}.econ-bar .econ-fun-fill{background:#608fca!important}.econ-bar .econ-event-fill{background:#dc9b76!important}.econ-bar .econ-margin-fill{background:#73c5a8!important}.econ-chart{display:block;width:100%;height:105px;margin-top:-10px}.econ-chart-legend{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#b8d1d9;font-size:11px}
+.saving-learning{padding:0 25px 25px;display:grid;gap:15px}.compound-card,.saving-types,.horizon-card{border:1px solid #365465;background:#102235;border-radius:15px;padding:19px 21px}.saving-card-kicker{font-size:10px;letter-spacing:.15em;font-weight:800;color:#82dfd1}.compound-card h4,.saving-types h4,.horizon-card h4{font-size:19px;line-height:1.3;margin:7px 0 8px;color:#edf8fa}.compound-card>p,.horizon-copy>p{font-size:13px;line-height:1.6;color:#bfd0db;margin:0;max-width:900px}.compound-flow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:17px 0 12px}.compound-flow span{background:#1b394b;border:1px solid #3c6670;color:#e3f5f2;border-radius:9px;padding:9px 11px;font-size:12px;font-weight:700}.compound-flow b{color:#7fe0d1}.compound-card .saving-small-note{font-size:11px;color:#9fb8c7}.saving-type-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}.saving-type{background:#172e42;border:1px solid #304e62;border-radius:11px;padding:13px;min-width:0}.saving-type-mark{color:#80dfd1;font-size:10px;font-weight:800;letter-spacing:.1em}.saving-type h5{font-size:14px;color:#f0f7f8;margin:7px 0}.saving-type p{font-size:11px;line-height:1.55;color:#bdced9;margin:0 0 12px}.risk-label{display:inline-block;font-size:9px;font-weight:750;letter-spacing:.04em;border-radius:20px;padding:5px 8px}.risk-low{background:#1c493f;color:#9be4c9}.risk-mid{background:#4a422d;color:#f0d28e}.risk-high{background:#4c3438;color:#f2b0ae}.horizon-card{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:22px;align-items:center}.horizon-control label{display:flex;justify-content:space-between;gap:10px;color:#d6e7ed;font-size:13px;font-weight:650}.horizon-control output{color:#80dfd1;font-weight:800}.horizon-control input{width:100%;accent-color:#7ce1d2;margin:13px 0 3px}.horizon-scale{display:flex;justify-content:space-between;color:#9fb6c4;font-size:10px}.horizon-feedback{margin-top:12px;padding:12px 13px;border-left:3px solid #80dfd1;background:#1a3546;border-radius:5px 9px 9px 5px;color:#c9dce4;font-size:12px;line-height:1.55}.horizon-feedback strong{display:block;color:#91e5d7;margin-bottom:4px}
+@media(max-width:900px){.saving-type-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.horizon-card{grid-template-columns:1fr}}
+@media(max-width:560px){.saving-learning{padding:0 18px 18px}.compound-card,.saving-types,.horizon-card{padding:16px}.saving-type-grid{grid-template-columns:1fr}.compound-flow{gap:6px}.compound-flow span{font-size:10px;padding:8px}.compound-flow b{font-size:11px}}
+
+.econ-loan-note{margin:0 25px 24px;padding:14px 17px;background:#1b3443;border-left:3px solid #83dccc;border-radius:5px 10px 10px 5px;font-size:12px;line-height:1.65;color:#c3d7e2}.econ-loan-note strong{color:#e9f8f6}.econ-loan-note span{color:#9fb7c5}.econ-legacy{display:none!important}.econ-practice-divider{margin:52px 0 20px}.econ-practice-icon{background:#2d354e;color:#d5c5ff;border-color:#555b85}.practice{margin-top:0!important}.practice-head .eyebrow{display:none}@media(max-width:700px){.econ-module-body{grid-template-columns:1fr;padding:18px}.econ-module-heading{padding:18px}.econ-loan-note{margin:0 18px 18px}.econ-section-count{font-size:10px}.econ-intro{margin-top:15px}}
+
+/* LärKommunikation följer samma sidstruktur och visuella system som LärEkonomi. */
+.comm-module-body{display:block;padding:22px 25px 25px}
+.comm-demo{border:1px solid #365465;background:#0d1e2e;border-radius:15px;padding:20px;max-width:100%}
+.comm-demo label{display:block;color:#d3e4eb;font-size:14px;font-weight:700;margin:0 0 9px}
+.comm-demo select{display:block;width:100%;max-width:760px;background:#102438;color:#edf7fa;border:1px solid #567184;border-radius:9px;padding:12px;font:inherit}
+.comm-demo output{display:block;margin-top:13px;color:#8ce7d7;font-weight:700;line-height:1.55}
+.comm-insight{margin:15px 25px 22px;padding:14px 17px;background:#1b3443;border-left:3px solid #83dccc;border-radius:5px 10px 10px 5px;color:#c3d7e2;font-size:13px;line-height:1.65}
+.comm-section-intro{max-width:900px;color:#bfd0db;margin:-5px 0 18px;font-size:15px}
+.comm-practice{margin-top:52px}
+.comm-practice .econ-section-icon{background:#2d354e;color:#d5c5ff;border-color:#555b85}
+.comm-practice-intro{max-width:900px;color:#bfd0db;margin:-4px 0 18px}
+.comm-exercise{padding:25px}
+.comm-exercise .exercise-top{display:flex;justify-content:space-between;gap:12px;align-items:center;color:#8ce7d7;font-size:12px;font-weight:800;letter-spacing:.08em}
+.comm-exercise .progress{height:8px;background:#334b5d;border-radius:999px;overflow:hidden;margin:13px 0 24px}
+.comm-exercise .progress span{display:block;height:100%;background:#9ed9b8;width:12.5%;transition:width .2s}
+.comm-exercise .number{color:#9ed9b8;font-size:12px;font-weight:800;letter-spacing:.12em;margin-bottom:8px}
+.comm-exercise h2{font-size:clamp(24px,3vw,32px);margin:0 0 10px}
+.comm-exercise .prompt{font-size:17px;line-height:1.65;color:#e3edf1;margin:0 0 19px;max-width:900px}
+.comm-exercise .choice-list{display:grid;gap:10px}
+.comm-exercise .choice{width:100%;text-align:left;border:1px solid #405a6d;background:#14283a;color:#d9e7ef;border-radius:12px;padding:15px;display:flex;gap:12px;align-items:flex-start}
+.comm-exercise .choice .letter{display:grid;place-items:center;flex:0 0 31px;height:31px;border:1px solid #567184;border-radius:8px;color:#9ed9b8;font-weight:800;font-size:13px}
+.comm-exercise .choice strong{display:block;color:#f2fbff}
+.comm-exercise .choice small{display:block;color:#b5c9d4;font-size:13px;line-height:1.5;margin-top:4px}
+.comm-exercise .choice.selected{border-color:#9ed9b8;background:#24433f}
+.comm-exercise .choice.correct{border-color:#9ed9b8;background:#1d403b}
+.comm-exercise .choice.incorrect{border-color:#c88d83;background:#3a2c33}
+.comm-exercise .feedback{margin-top:17px;padding:16px 18px;border:1px solid #456b65;border-radius:12px;background:#102f32;color:#d9f0e8}
+.comm-exercise .feedback h3{margin:0 0 6px;color:#9ed9b8;font-size:17px}
+.comm-exercise .feedback p{margin:6px 0}
+.comm-exercise .actions{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:22px}
+.comm-exercise .btn{border:1px solid #628d83;border-radius:10px;background:#9ed9b8;color:#102820;padding:12px 18px;font-weight:800}
+.comm-exercise .btn.secondary{background:transparent;color:#dceaf0;border-color:#567184}
+.comm-exercise .btn:disabled{opacity:.45;cursor:not-allowed}
+.comm-summary{border:1px solid #456b65;background:#102f32;border-radius:14px;padding:20px;margin-top:16px;color:#d9f0e8}
+.comm-summary strong{color:#9ed9b8}
+.comm-summary button{margin-top:12px}
+@media(max-width:700px){
+ .comm-module-body{padding:18px}
+ .comm-insight{margin:0 18px 18px}
+ .comm-exercise{padding:18px}
+ .comm-exercise .prompt{font-size:16px}
+ .comm-demo{padding:16px}
+}
+
+.comm-scenario-label{color:#c6d8e1;font-size:15px;font-weight:750;margin:0 0 10px}
+.comm-message{display:inline-block;background:#193548;border-left:4px solid #83dccc;padding:13px 18px;border-radius:6px 11px 11px 6px;font-size:19px;font-weight:700;color:#f0f8fb;margin:0 0 22px}
+.comm-context-choices{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:20px}
+.comm-context-choice{font:inherit;font-size:15px;font-weight:750;color:#e5f2f5;background:#183449;border:1.5px solid #547789;border-radius:12px;padding:14px 19px;min-height:50px;cursor:pointer;transition:background .15s,border-color .15s}
+.comm-context-choice:hover{border-color:#83dccc}
+.comm-context-choice.selected{background:#244c4c;border-color:#83dccc;color:#b4f5e9;box-shadow:inset 0 0 0 1px #83dccc}
+.comm-context-choice:focus-visible{outline:3px solid #83dccc;outline-offset:3px}
+@media(max-width:700px){.comm-context-choices{flex-direction:column}.comm-context-choice{text-align:left;width:100%}}
+
+/* LärKommunikation: samma rosa accent som startsidans kommunikationskort. */
+:root{--accent:#e8b5ce}
+.econ-intro{border-color:#6d526d;background:radial-gradient(ellipse at 100% 0%,#65405a55,transparent 65%),linear-gradient(135deg,#22293e,#121f30)}
+.econ-overline,.econ-section-label,.econ-module-num,.econ-section-count,.econ-section-icon,.econ-module-heading .econ-module-num,.comm-exercise .exercise-top,.comm-exercise .number,.comm-exercise .feedback h3,.comm-summary strong{color:#f2c7df}
+.econ-intro-rule{background:#e8b5ce}
+.econ-section-icon{background:#453043;border-color:#8b637f;color:#f2c7df}
+.econ-module,.comm-demo,.comm-exercise{border-color:#5a4d66}
+.comm-demo output{color:#f2c7df}
+.comm-insight,.comm-message{border-left-color:#e8b5ce}
+.comm-context-choice:hover,.comm-context-choice.selected{border-color:#e8b5ce}
+.comm-context-choice.selected{background:#4b3548;color:#ffe0ee;box-shadow:inset 0 0 0 1px #e8b5ce}
+.comm-context-choice:focus-visible{outline-color:#e8b5ce}
+.comm-exercise .progress span{background:#e8b5ce}
+.comm-exercise .choice .letter{color:#f2c7df;border-color:#89687f}
+.comm-exercise .choice.selected{border-color:#e8b5ce;background:#403044}
+.comm-exercise .choice.correct{border-color:#80c9ad;background:#1d403b}
+.comm-exercise .choice.incorrect{border-color:#c88d83;background:#3a2c33}
+.comm-exercise .feedback,.comm-summary{background:#30283d;border-color:#80617d;color:#f1e2ec}
+.comm-exercise .btn{background:#e8b5ce;color:#2c1a2a;border-color:#d6a0bd}
+.comm-exercise .btn.secondary{background:transparent;color:#f0d9e6;border-color:#80617d}
+.comm-practice .econ-section-icon{background:#453043;color:#f2c7df;border-color:#8b637f}
 </style>
+</head>
+<body>
+<main class="layout">
+<header class="top">
+ <a aria-label="LärSmart startsida" class="ls-original-logo" href="../index.html"><img alt="LärSmart" src="../larsmart-logo-dark.png"></a>
+ <a class="back" href="../index.html#library">← Till startsidan</a>
+</header>
+
+<section aria-labelledby="comm-title" class="econ-intro">
+ <div class="econ-intro-top">
+  <span class="econ-overline">LÄRSMART / KUNSKAPSOMRÅDE</span>
+  <span class="econ-time">UTFORSKA I DIN EGEN TAKT</span>
+ </div>
+ <h1 id="comm-title"><span class="ls-heading-name"><span class="ls-heading-learn">Lär</span><span class="ls-heading-rest">Kommunikation</span></span></h1>
+ <div class="econ-intro-bottom">
+  <div class="econ-intro-rule"></div>
+  <p>Förstå hur budskap formas, tolkas och påverkar samspelet mellan människor. Träna på att lyssna, uttrycka dig tydligt och hantera situationer där kommunikationen blir svår.</p>
+ </div>
+</section>
+
+<section aria-labelledby="comm-explore-title" class="econ-explore">
+ <div class="econ-section-heading">
+  <span aria-hidden="true" class="econ-section-icon">✦</span>
+  <div><span class="econ-section-label">DEL 01 · UPPTÄCK SAMBANDEN</span><h2 id="comm-explore-title">Utforska</h2></div>
+  <span class="econ-section-count">3 DELAR</span>
+ </div>
+ <p class="comm-section-intro">Testa olika sätt att kommunicera och se hur sammanhang, lyssnande och ordval påverkar vad som händer i ett samtal.</p>
+
+ <div class="econ-modules">
+  <article class="econ-module" id="comm-part-1">
+   <div class="econ-module-heading"><span class="econ-module-num">01</span><div><h3>Förstå budskap och tolkning</h3><p>Se varför samma ord kan uppfattas på olika sätt.</p></div></div>
+   <div class="comm-module-body">
+    <div class="comm-demo">
+     <p class="comm-scenario-label">Samma meddelande:</p>
+     <p class="comm-message">”Vi behöver prata i morgon.”</p>
+     <p class="comm-scenario-label">Vem skickar meddelandet?</p>
+     <div class="comm-context-choices" role="group" aria-label="Välj avsändare">
+      <button type="button" class="comm-context-choice selected" data-context="team" aria-pressed="true">En kollega</button>
+      <button type="button" class="comm-context-choice" data-context="friend" aria-pressed="false">En nära vän</button>
+      <button type="button" class="comm-context-choice" data-context="manager" aria-pressed="false">Din chef, sent på kvällen</button>
+     </div>
+     <output id="contextOutput" aria-live="polite">Mottagaren kan undra vad samtalet gäller och om något behöver ändras.</output>
+    </div>
+   </div>
+   <div class="comm-insight">Avsändarens avsikt och mottagarens tolkning är inte alltid samma sak. Ton, relation och tidpunkt påverkar hur budskapet tas emot.</div>
+  </article>
+
+  <article class="econ-module" id="comm-part-2">
+   <div class="econ-module-heading"><span class="econ-module-num">02</span><div><h3>Lyssna och uttryck dig tydligt</h3><p>Undersök hur frågor och återkoppling kan föra samtalet framåt.</p></div></div>
+   <div class="comm-module-body">
+    <div class="comm-demo">
+     <p class="comm-scenario-label">Någon säger:</p>
+     <p class="comm-message">”Jag känner mig inte lyssnad på.”</p>
+     <p class="comm-scenario-label">Hur svarar du?</p>
+     <div class="comm-context-choices" role="group" aria-label="Välj hur du svarar">
+      <button type="button" class="comm-context-choice selected" data-listen="advice" aria-pressed="true">”Du borde nog bara säga ifrån.”</button>
+      <button type="button" class="comm-context-choice" data-listen="open" aria-pressed="false">”Vad hände som fick dig att känna så?”</button>
+      <button type="button" class="comm-context-choice" data-listen="defend" aria-pressed="false">”Men jag har ju lyssnat hela tiden.”</button>
+     </div>
+     <output id="listenOutput" aria-live="polite">Detta ger råd innan du vet vad personen upplevt.</output>
+    </div>
+   </div>
+   <div class="comm-insight">Att lyssna aktivt betyder att undersöka den andres perspektiv, inte att automatiskt hålla med.</div>
+  </article>
+
+  <article class="econ-module" id="comm-part-3">
+   <div class="econ-module-heading"><span class="econ-module-num">03</span><div><h3>Hantera svåra situationer</h3><p>Se hur du kan förstå behov och minska låsningar vid oenighet.</p></div></div>
+   <div class="comm-module-body">
+    <div class="comm-demo">
+     <p class="comm-scenario-label">Situationen:</p>
+     <p class="comm-message">Två personer vill olika saker och samtalet har kört fast.</p>
+     <p class="comm-scenario-label">Vad börjar du med?</p>
+     <div class="comm-context-choices" role="group" aria-label="Välj hur du hanterar oenigheten">
+      <button type="button" class="comm-context-choice selected" data-conflict="positions" aria-pressed="true">Be båda argumentera för sin lösning</button>
+      <button type="button" class="comm-context-choice" data-conflict="needs" aria-pressed="false">Undersöka vilka behov som ligger bakom</button>
+      <button type="button" class="comm-context-choice" data-conflict="decide" aria-pressed="false">Välja den snabbaste lösningen</button>
+     </div>
+     <output id="conflictOutput" aria-live="polite">Det riskerar att låsa samtalet vid två konkurrerande förslag.</output>
+    </div>
+   </div>
+   <div class="comm-insight">En konflikt kan bottna i två legitima behov. Börja med att förstå dem innan du väljer lösning.</div>
+  </article>
+ </div>
+</section>
+
+<section aria-labelledby="comm-practice-title" class="comm-practice">
+ <div class="econ-section-heading">
+  <span aria-hidden="true" class="econ-section-icon">✓</span>
+  <div><span class="econ-section-label">DEL 02 · TESTA DINA KUNSKAPER</span><h2 id="comm-practice-title">Öva</h2></div>
+  <span class="econ-section-count">8 UPPGIFTER</span>
+ </div>
+ <p class="comm-practice-intro">Öva på situationer från vardag och arbetsliv. Välj det handlingssätt du tycker fungerar bäst. Efter varje svar får du återkoppling och en förklaring. Du kan ändra svar innan du går vidare.</p>
+
+ <div aria-live="polite" class="econ-module comm-exercise">
+  <div class="exercise-top"><span id="taskCount">UPPGIFT 1 AV 8</span><span id="taskType">KOMMUNIKATION I PRAKTIKEN</span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+  <div class="number" id="taskNumber">UPPGIFT 01</div>
+  <h2 id="taskTitle"></h2>
+  <p class="prompt" id="taskPrompt"></p>
+  <div class="choice-list" id="choices"></div>
+  <div class="feedback hidden" id="feedback"></div>
+  <div class="actions">
+   <button class="btn secondary" id="prevTask" type="button">← Föregående</button>
+   <button class="btn" disabled id="nextTask" type="button">Kontrollera svar</button>
+  </div>
+ </div>
+ <div class="comm-summary hidden" id="summary"></div>
+</section>
+
+<p class="foot">LärSmart · Kunskap byggs genom att utforska, pröva och reflektera. Situationerna är fiktiva och svaren visar möjliga konsekvenser, inte facit för alla sammanhang.</p>
+</main>
+<script>
+
+const $=id=>document.getElementById(id);
+const contextMessages={team:'Mottagaren kan undra vad samtalet gäller och om något behöver ändras.',friend:'Relationen kan göra att meddelandet uppfattas som omtanke eller en naturlig fråga.',manager:'Tidpunkten och maktskillnaden kan skapa oro även om avsikten är praktisk.'};
+document.querySelectorAll('.comm-context-choice').forEach(button=>button.addEventListener('click',()=>{
+ document.querySelectorAll('.comm-context-choice').forEach(b=>{
+  const active=b===button;
+  b.classList.toggle('selected',active);
+  b.setAttribute('aria-pressed',String(active));
+ });
+ $('contextOutput').textContent=contextMessages[button.dataset.context];
+}));
+const listenMessages={advice:'Detta ger råd innan du vet vad personen upplevt.',open:'En öppen fråga ger personen utrymme att beskriva situationen med egna ord.',defend:'Detta försvarar din avsikt men riskerar att avfärda personens upplevelse.'};
+document.querySelectorAll('[data-listen]').forEach(button=>button.addEventListener('click',()=>{
+ document.querySelectorAll('[data-listen]').forEach(b=>{const active=b===button;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active));});
+ $('listenOutput').textContent=listenMessages[button.dataset.listen];
+}));
+const conflictMessages={positions:'Det riskerar att låsa samtalet vid två konkurrerande förslag.',needs:'Du får syn på vad som behöver fungera och kan hitta fler lösningar än de första två.',decide:'Ett snabbt beslut kan missa viktiga krav och göra konflikten större senare.'};
+document.querySelectorAll('[data-conflict]').forEach(button=>button.addEventListener('click',()=>{
+ document.querySelectorAll('[data-conflict]').forEach(b=>{const active=b===button;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active));});
+ $('conflictOutput').textContent=conflictMessages[button.dataset.conflict];
+}));
+const tasks=[
+{type:'GRUNDERNA',title:'Vad vet du egentligen?',prompt:'Du får ett meddelande från en kollega: ”Vi behöver prata om din del av arbetet i morgon.” Vilket av följande är en faktisk uppgift i meddelandet, utan att lägga till en tolkning?',options:[['Ni behöver prata om din del av arbetet i morgon.','Detta återger det som faktiskt står i meddelandet.'],['Kollegan är missnöjd med ditt arbete.','Det är en möjlig tolkning, men missnöje står inte uttryckligen.'],['Du har gjort ett allvarligt misstag.','Meddelandet säger inget om att ett misstag har skett.'],['Kollegan vill kritisera dig inför andra.','Varken syfte eller plats framgår av meddelandet.']],correct:0,feedback:'Skilj mellan det som faktiskt sägs och det du antar. Tolkningar kan vara rimliga, men behöver undersökas innan de behandlas som fakta.',reflect:'Vilken fråga kan du ställa för att få veta vad samtalet gäller?'} ,
+{type:'FAKTA ELLER TOLKNING',title:'Skilj observation från tolkning',prompt:'En kollega säger ingenting under mötet och skickar sedan tre invändningar skriftligt. Vilken slutsats är mest välgrundad?',options:[['Kollegan är ointresserad av gruppens arbete.','Tystnad räcker inte för att dra den slutsatsen.'],['Kollegan framförde inte sina invändningar muntligt under mötet.','Det är en beskrivning av det som faktiskt hände.'],['Kollegan vågar inte säga vad hen tycker.','Det kan vara en förklaring, men du vet ännu inte varför.'],['Kollegan vill försvåra beslutet.','Det tillskriver personen en avsikt som inte är belagd.']],correct:1,feedback:'En observation beskriver vad som går att se eller höra. En tolkning förklarar varför det hände. Håll isär dem tills du har mer information.',reflect:'Hur kan du fråga om kollegans perspektiv utan att lägga ord i munnen på personen?'},
+{type:'AKTIVT LYSSNANDE',title:'Lyssna innan du löser',prompt:'En vän berättar att hen känner sig överkörd i ett gemensamt beslut. Du tycker att beslutet verkar rimligt. Vad är en bra första respons?',options:[['Förklara varför beslutet ändå var det bästa.','Du går direkt till försvar och riskerar att missa upplevelsen.'],['Säga att personen inte ska ta det så personligt.','Det riskerar att förminska känslan och stänga samtalet.'],['Föreslå en kompromiss direkt.','Du föreslår en lösning innan du förstått vad som behöver förändras.'],['Fråga vad som gjorde att personen kände sig överkörd.','Du undersöker upplevelsen innan du argumenterar eller ger råd.']],correct:3,feedback:'Aktivt lyssnande börjar med att försöka förstå. Du kan bekräfta att du hört personen utan att behöva hålla med om varje slutsats.',reflect:'Hur kan du sammanfatta det du hört för att kontrollera att du förstått rätt?'},
+{type:'KANAL OCH SAMMANHANG',title:'Välj rätt kanal',prompt:'Du behöver ge en medarbetare tydlig återkoppling om ett återkommande kvalitetsproblem. Det kräver exempel, dialog och möjlighet att ställa frågor. Vilket upplägg passar bäst?',options:[['Ett kort meddelande i gruppchatten.','Gruppchatten ger fel sammanhang för individuell och känslig återkoppling.'],['Ett mejl med enbart slutsatsen.','Skriftlighet dokumenterar, men ger begränsat utrymme för dialog och nyanser.'],['Ett enskilt samtal med konkreta exempel och gemensam dokumentation efteråt.','Samtalet ger utrymme för dialog och dokumentationen säkrar vad ni kommit överens om.'],['Vänta tills nästa utvecklingssamtal.','Det kan dröja för länge om problemet påverkar arbetet nu.']],correct:2,feedback:'Välj kanal efter syfte, känslighet och behov av återkoppling. Ett samtal kan behöva kompletteras med skriftlig dokumentation.',reflect:'Vilken del av återkopplingen bör vara konkret och möjlig att följa upp?'},
+{type:'FRÅGOR SOM ÖPPNAR',title:'Formulera en bättre fråga',prompt:'Du leder ett möte där gruppen ska granska ett förslag. Du vill upptäcka risker och svaga antaganden, inte bara få ett snabbt ja. Vilken fråga hjälper mest?',options:[['Vilka antaganden behöver hålla, och vad skulle kunna få oss att tänka om?','Frågan bjuder in till att pröva förutsättningarna och upptäcka risker.'],['Är alla med på att vi kör?','Frågan efterfrågar främst enighet, inte kritisk prövning.'],['Ser någon ett hinder som gör förslaget omöjligt?','Det kräver ett mycket starkt motargument för att någon ska invända.'],['Kan vi fatta beslut nu så att vi håller tidsplanen?','Tidsplanen blir styrande och riskerar att tränga undan sakfrågan.']],correct:0,feedback:'Frågans utformning påverkar vilka svar som känns möjliga. En bra granskningsfråga gör det legitimt att hitta svagheter i förslaget.',reflect:'Hur kan du visa att invändningar är ett bidrag till kvalitet, inte ett tecken på motstånd?'},
+{type:'KONFLIKT OCH BEHOV',title:'När båda har rimliga skäl',prompt:'En verksamhetsansvarig vill förlänga öppettiderna. Driftansvarig säger nej eftersom bemanning och ventilation inte räcker till. Hur bör du inleda samtalet?',options:[['Be dem mötas halvvägs och förkorta öppettiden.','En kompromiss prövar inte om lösningen fungerar för någon av parterna.'],['Låta den med störst budgetansvar bestämma direkt.','Mandat kan behövas, men först måste kraven och konsekvenserna bli tydliga.'],['Be dem argumentera för varför den andra har fel.','Det förstärker motsättningen och låser samtalet vid positioner.'],['Be båda beskriva vilka behov och begränsningar deras uppdrag innebär.','Du flyttar samtalet från positioner till de faktiska förutsättningarna.']],correct:3,feedback:'Bakom olika ståndpunkter kan det finnas behov som går att förena. Börja med att förstå uppdrag, begränsningar och vad som måste fungera.',reflect:'Vilken alternativ lösning skulle kunna möta båda uppdragens viktigaste krav?'},
+{type:'GRUPPDYNAMIK',title:'Vem kommer till tals?',prompt:'Två erfarna personer dominerar mötena. En ny kollega bidrar sällan muntligt men skickar väl underbyggda synpunkter efteråt. Vad kan du göra som mötesledare?',options:[['Be kollegan att bli mer utåtriktad.','Det lägger hela ansvaret på individen och lämnar mötesformen oförändrad.'],['Skicka ut frågorna i förväg och ge utrymme för både skriftliga och muntliga inspel.','Fler kan förbereda sig och bidra på olika sätt.'],['Låta de mest erfarna sammanfatta gruppens syn.','Det riskerar att viktiga perspektiv aldrig prövas.'],['Avsluta diskussionen snabbare så att mötena blir effektivare.','Det kan minska tiden för eftertanke och göra dominansen starkare.']],correct:1,feedback:'Likvärdigt deltagande betyder inte att alla måste kommunicera på samma sätt. Mötesformen kan behöva ge plats åt fler sätt att bidra.',reflect:'Hur kan du kontrollera att de skriftliga inspelen faktiskt påverkar gruppens beslut?'},
+{type:'KOMPLEX SITUATION',title:'Kommunicera en förändring trovärdigt',prompt:'En ny rutin ska införas för att minska fel. Ledningen beskriver förändringen som enkel och positiv. Medarbetarna ser ökad arbetsbelastning och risker. Vilket agerande ger bäst förutsättningar för förtroende?',options:[['Upprepa fördelarna tydligare tills gruppen förstår.','Det kan ge mer information, men lämnar invändningarna obesvarade.'],['Vänta med all kommunikation tills varje detalj är bestämd.','Det minskar osäkerheten i budskapet men stänger ute viktig kunskap under planeringen.'],['Redovisa syftet, vad som är bestämt, vad som är osäkert och hur invändningar ska prövas.','Det ger en realistisk bild och visar hur dialogen kan påverka genomförandet.'],['Låta varje arbetsgrupp själv avgöra om rutinen ska införas.','Det kan skapa olika arbetssätt trots att förändringen kräver gemensam tillämpning.']],correct:2,feedback:'Trovärdig förändringskommunikation är tydlig med både mål och osäkerheter. Den visar också vad som går att påverka och hur synpunkter tas om hand.',reflect:'Vilken osäkerhet behöver du vara öppen med, och vem ansvarar för att följa upp den?'}
+];
+let current=0;const answers=Array(tasks.length).fill(null);const checked=Array(tasks.length).fill(false);
+function renderTask(){const t=tasks[current];$('taskCount').textContent=`UPPGIFT ${current+1} AV ${tasks.length}`;$('taskType').textContent=t.type;$('progressBar').style.width=((current+1)/tasks.length*100)+'%';$('taskNumber').textContent=`UPPGIFT 0${current+1}`;$('taskTitle').textContent=t.title;$('taskPrompt').textContent=t.prompt;$('choices').replaceChildren(...t.options.map((o,i)=>{const b=document.createElement('button');b.type='button';b.className='choice';if(answers[current]===i)b.classList.add('selected');if(checked[current]&&i===t.correct)b.classList.add('correct');if(checked[current]&&answers[current]===i&&i!==t.correct)b.classList.add('incorrect');b.setAttribute('aria-pressed',String(answers[current]===i));const letter=document.createElement('span');letter.className='letter';letter.textContent='ABCD'[i];const wrap=document.createElement('span');const strong=document.createElement('strong');strong.textContent=o[0];const small=document.createElement('small');small.textContent=o[1];wrap.append(strong,small);b.append(letter,wrap);b.addEventListener('click',()=>{answers[current]=i;checked[current]=false;renderTask()});return b}));const f=$('feedback');f.classList.toggle('hidden',!checked[current]);if(checked[current]){const correct=answers[current]===t.correct;f.replaceChildren();const h=document.createElement('h3');h.textContent=correct?'Bra resonemang':'Tänk ett varv till';const p=document.createElement('p');p.textContent=t.feedback;const r=document.createElement('p');r.innerHTML='<strong>Reflektera:</strong> '+t.reflect;f.append(h,p,r);}$('prevTask').disabled=current===0;$('nextTask').disabled=answers[current]===null;$('nextTask').textContent=checked[current]?(current===tasks.length-1?'Se resultat':'Nästa uppgift →'):'Kontrollera svar';}
+$('nextTask').addEventListener('click',()=>{if(!checked[current]){checked[current]=true;renderTask();return;}if(current<tasks.length-1){current++;renderTask();}else showSummary();});$('prevTask').addEventListener('click',()=>{if(current>0){current--;renderTask();}});
+function showSummary(){const score=tasks.reduce((n,t,i)=>n+(answers[i]===t.correct?1:0),0);const s=$('summary');s.classList.remove('hidden');s.innerHTML=`<strong>Du har gått igenom alla åtta uppgifter.</strong><p>Du valde det mest välgrundade alternativet i <strong>${score} av 8</strong> uppgifter.</p><p>Gå gärna tillbaka till de situationer där du vill jämföra dina resonemang. Kommunikation kräver ofta att man väger syfte, sammanhang och konsekvenser mot varandra.</p><button class="btn secondary" id="restart" type="button">Gör om övningarna</button>`;$('restart').addEventListener('click',()=>{current=0;answers.fill(null);checked.fill(false);s.classList.add('hidden');renderTask();});s.scrollIntoView({behavior:'smooth',block:'nearest'});}
+renderTask();
+
+</script>
+</body>
+</html>
